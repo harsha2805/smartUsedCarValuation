@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART USED CAR VALUATION</title>
+
+    <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet">
+    <script src="/static/js/script.js"></script>
+
+</head>
+
+<body>
+    <div class="login flexc">
+        <form class="mainForm" action="{{ url_for('predict')}}" method="POST">
+            <h1 class="mainForm_title"> SMART USED CAR VALUATION</h1>
+            <h3 align="center">By Team 4</h3>
+            <label for="Year">Year :</label><br>
+            <input type="text" id="Year" name="Year" required="required" />
+            <span class="error-message" id="year-error"></span>
+            <br><br>
+
+            <label for="Present_Price">Present Price in Lakhs: (Example- 1.2, 4.3)</label><br>
+            <input type="text" id="Present_Price" name="Present_Price" required="required" />
+            <span class="error-message" id="present-price-error"></span>
+            <br><br>
+
+            <label for="Kms_Driven">Kilometers Driven:</label><br>
+            <input type="text" id="Kms_Driven" name="Kms_Driven" required="required" />
+            <span class="error-message" id="kms-driven-error"></span>
+            <br><br>
+
+            <label for="Fuel_Type">Fuel Type: [Petrol, Diesel, CNG]</label><br>
+            <input type="text" id="Fuel_Type" name="Fuel_Type" required="required" />
+            <span class="error-message" id="fuel-type-error"></span>
+            <br><br>
+
+            <label for="Seller_Type">Seller Type: [Dealer, Individual]</label><br>
+            <input type="text" id="Seller_Type" name="Seller_Type" required="required" />
+            <span class="error-message" id="seller-type-error"></span>
+            <br><br>
+
+            <label for="Transmission">Transmission: [Manual, Automatic]</label><br>
+            <input type="text" id="Transmission" name="Transmission" required="required" />
+            <span class="error-message" id="transmission-error"></span>
+            <br><br>
+
+            <label for="Owner">Number of Previous Owner's: [0-4]</label><br>
+            <input type="text" id="Owner" name="Owner" required="required" />
+            <span class="error-message" id="owner-error"></span>
+            <br><br>
+
+            <div class="btn_con flexc">
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </div>
+        </form>
+
+        <br>
+        <br>
+        <div class="Pred" id="prediction-container"></div>
+    </div>
+</body>
+
+</html>
